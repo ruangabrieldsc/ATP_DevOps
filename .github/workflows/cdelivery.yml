@@ -1,0 +1,19 @@
+name: Continuous Delivery
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+
+      - name: CD
+        uses: actions/upload-artifact@v7
+        with:
+          name: projeto.zip
+          path: |
+            '**.py'
+            README.md
