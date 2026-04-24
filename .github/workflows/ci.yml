@@ -30,7 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run Discord Webhook
-        uses: Sniddl/discord-commits@v1.6
+      - name: Action Discord Alert
+        if: always()
+        uses: ErnaneJ/action-discord-alerts@main
         with:
-            webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
