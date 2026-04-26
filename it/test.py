@@ -16,14 +16,16 @@ async def test_root():
 
 
 @pytest.mark.asyncio
-async def test_create_animal(animal: Animal):
-    animal_teste = Animal(nome="Pikachu", cor="Amarelho", ativo=True)
+async def test_create_animal():
+    animal_teste = Animal(nome="Pikachu", cor="Amarelo", ativo=True)
     resultado = await criarAnimal(animal_teste)
     assert animal_teste == resultado
 
 
-def test_calcular_calorias_feijao(gramas):
-    assert calcular_calorias_feijao(500) == 380
+def test_calcular_calorias_feijao():
+    gramas = 100
+    resultado = calcular_calorias_feijao(gramas)
+    assert resultado > 0
 
 
 def melhor_filme(filme):

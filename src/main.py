@@ -17,7 +17,7 @@ async def root():
 
 @app.get("/teste")
 async def teste():
-    return {"Teste": "123"}
+    return {"número1": 1}
 
 
 @app.post("/animais/criar/")
